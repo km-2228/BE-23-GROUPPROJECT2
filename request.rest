@@ -1,0 +1,32 @@
+GET http://localhost:3030/partners/all-partner
+
+###
+GET http://localhost:3030/partners/all-partner/1
+
+###
+POST http://localhost:3030/partners/all-partner
+Content-Type: application/json
+
+{
+    "nama": "bernardo",
+    "pengalaman": "programmer di gugel",
+    "pendidikan": "s2 itb",
+    "jenis_kelamin": "laki",
+    "asal_kota": "semarang",
+    "rating": "999999",
+    "deskripsi": "sangat baik"
+}
+
+###
+PATCH http://localhost:3030/partners/all-partner/1
+Content-Type: application/json
+
+{
+    "nama": "william",
+    "pengalaman": "programmer di tokped",
+    "pendidikan": "s2 harvard",
+    "jenis_kelamin": "laki",
+    "asal_kota": "london",
+    "rating": "999999",
+    "deskripsi": "sangat baik dan ramah"
+}

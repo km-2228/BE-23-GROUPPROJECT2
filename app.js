@@ -6,14 +6,13 @@ const allRouter = require("./routes/router");
 
 
 app.use(express.json());
+app.use(allRouter);
+
 
 app.listen(PORT, () => {
     console.log("server running on PORT", PORT)
 })
 
-app.get("/", (req, res) => {
-    res.json({ message: "ok" });
-  });
 
 
 
