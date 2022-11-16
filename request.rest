@@ -1,7 +1,7 @@
 GET http://localhost:3030/partners/all-partner
 
 ###
-GET http://localhost:3030/partners/all-partner/1
+GET http://localhost:3030/partners/all-partner/3
 
 ###
 POST http://localhost:3030/partners/all-partner
@@ -30,3 +30,29 @@ Content-Type: application/json
     "rating": "999999",
     "deskripsi": "sangat baik dan ramah"
 }
+
+
+###
+DELETE http://localhost:3030/partners/all-partner/3
+
+###
+POST http://localhost:3030/admin/register
+Content-Type: application/json
+
+{
+    "username": "rawon",
+    "email": "rawon@gmail.com",
+    "password": "yoii"
+}
+
+
+###
+PATCH http://localhost:3030/admin/edit/1
+Content-Type: application/json
+
+{
+    "username": "rafi",
+    "email": "rafi07@gmail.com",
+    "password": "okay"
+}
+
