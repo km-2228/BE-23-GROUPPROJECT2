@@ -3,6 +3,9 @@ const app = express();
 const PORT = 3030;
 const db = require('./models')
 const allRouter = require("./routes/router");
+const Role = db.role
+const auth = require('./routes/router');
+
 
 
 app.use(express.json());
@@ -13,8 +16,26 @@ app.listen(PORT, () => {
     console.log("server running on PORT", PORT)
 })
 
+app.use('/', auth);
 
 
+// db.sequelize.sync()
+// db.sequelize.sync({force: false}).then(() => {
+//     console.log('Drop and Resync Db');
+//     initial();
+//   });
+  
+//   function initial() {
+//     Role.create({
+//       id: 1,
+//       name: "user"
+//     });
+   
+//     Role.create({
+//       id: 2,
+//       name: "admin"
+//     });
+//   }
 
 // const mysql = require('mysql2')
 // const connection = mysql.createConnection({

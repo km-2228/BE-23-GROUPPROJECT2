@@ -15,7 +15,7 @@ const readPartner = async(req, res) => {
   const createPartner = async(req, res) => {
     try {
       await partner.create(req.body);
-      res.status(201).json({message:"menambahkan Item"});
+      res.status(201).json({message:"sukses menambah Partner baru"});
     } catch (error) {
       console.log(error.message)
     }  
@@ -44,7 +44,7 @@ const readPartner = async(req, res) => {
               id:req.params.id
           }
       });
-      res.status(200).json({message:" Item updated"});
+      res.status(200).json({message:" data partner updated"});
     } catch (error) {
         console.log(error.message)
     }
@@ -57,7 +57,7 @@ const readPartner = async(req, res) => {
                 id:req.params.id
             }
         });
-        res.status(200).json({message:" Item deleted"});
+        res.status(200).json({message:" data partner deleted"});
     } catch (error) {
         console.log(error.message)
     }
