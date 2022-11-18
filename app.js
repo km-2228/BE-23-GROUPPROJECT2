@@ -24,16 +24,21 @@ app.use('/', auth);
 //     console.log('Drop and Resync Db');
 //     initial();
 //   });
-  
+
 //   function initial() {
 //     Role.create({
 //       id: 1,
 //       name: "user"
 //     });
-   
+
 //     Role.create({
 //       id: 2,
 //       name: "admin"
+//     });
+
+//     Role.create({
+//       id: 3,
+//       name: "moderator"
 //     });
 //   }
 

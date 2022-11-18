@@ -15,10 +15,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   role.init({
     id: {
-      type:DataTypes.INTEGER,
-      primaryKey:true
+      type: DataTypes.INTEGER,
+      primaryKey: true,
     },
-      name: DataTypes.STRING
+    name: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'role',
