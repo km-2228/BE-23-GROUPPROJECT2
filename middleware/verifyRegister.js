@@ -46,12 +46,12 @@ const checkRolesExisted = (req, res, next) => {
       }
     }
   }
-  
+
   next();
 };
 
 
 module.exports = {
-    checkDuplicateUsernameOrEmail,
-    checkRolesExisted
+  checkDuplicateUsernameOrEmail,
+  checkRolesExisted
 };

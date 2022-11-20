@@ -6,16 +6,16 @@ const User = db.user;
 const verifyToken = (req, res, next) => {
     let token = req.headers["access-token"];
 
-    if(!token){
+    if (!token) {
         return res.status(403).send({
-            message:"no token provided"
+            message: "no token provided"
         });
     }
 
-    JWT.verify(token,config.secret,(err,decoded) => {
-        if(err){
+    JWT.verify(token, config.secret, (err, decoded) => {
+        if (err) {
             return res.status(401).send({
-                message:"unauthorized!"
+                message: "unauthorized!"
             });
         }
         req.userId = decoded.id;
@@ -26,8 +26,8 @@ const verifyToken = (req, res, next) => {
 const isAdmin = (req, res, next) => {
     User.findByPk(req.userId).then(user => {
         user.getRoles().then(roles => {
-            for(let i = 0; i < roles.length; i++){
-                if(roles[i].name === "admin"){
+            for (let i = 0; i < roles.length; i++) {
+                if (roles[i].name === "admin") {
                     next();
                     return;
                 }
@@ -35,9 +35,9 @@ const isAdmin = (req, res, next) => {
 
             res.status(403).send({
                 message: "Require Admin Role!"
-              });
-              return;
-        
+            });
+            return;
+
         })
     })
 }
